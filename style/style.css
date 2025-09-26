@@ -1,0 +1,94 @@
+body{
+    background-color: #211f1f;
+    color: #bda0a0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1{
+    text-align: center;
+}
+
+.photoMe {
+    width: 100%;
+    max-width: 250px;   /* prevents it from stretching beyond the max column size */
+    border-radius: 10px;
+    height: auto;       /* keeps proportions */
+    object-fit: cover;  /* optional: makes sure it fills neatly */
+}
+
+.flexy{
+    display: flex;
+    flex-direction: column;
+    gap: 5pxpx;
+}
+.flexy > div {
+  /*border: 1px solid rgb(9, 94, 164); /* or any color */
+  padding: 5px; /* space inside so text doesn’t touch border */
+}
+
+.griddy{
+    display: grid;
+    grid-template-columns: minmax(250px, 300px) 1fr;
+    gap: 5px;
+}
+
+.griddy > div{
+    /*border: 1px solid rgb(73, 186, 88); /* or any color */
+    padding: 10px; /* space inside so text doesn’t touch border */
+}
+
+
+.navbar{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.navigate ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;                   /* space between items */
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.navigate a {
+    text-decoration: none;       /* remove underline */
+    color: #b18686;
+    /*transition: all 0.3s ease;  /* smooth hover effect */
+}
+
+a{
+    color: #946c6c;
+    text-decoration: none;
+}
+a:hover{
+    color: #823e3e;
+}
+
+/* Highlight the section that is linked */
+div:target {
+    animation: highlightFade 1s ease forwards;  /*forwards keeps the last keyframe's styles after */
+    /* ease makes it start fast and slow down */
+    border-radius: 8px;
+    padding: 10px;
+}
+
+@keyframes highlightFade {
+  0% {      /* start of the animation */
+    background-color: #4d4949;
+    transform: scale(1.02);      /* enlarges section by 2% */
+  }
+  80% {     /*near the end of animation */
+    background-color: #353232;
+    transform: scale(1.02);
+  }
+  100% {
+    background-color: transparent;      /* higlight removed */
+    transform: scale(1);                /* size back to normal */
+  }
+}
