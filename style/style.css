@@ -15,6 +15,11 @@ h1{
     height: auto;       /* keeps proportions */
     object-fit: cover;  /* optional: makes sure it fills neatly */
 }
+.analoges{
+    border-radius: 40px;
+    padding: 10px;
+    max-width: 250px;
+}
 
 .flexy{
     display: flex;
@@ -91,4 +96,37 @@ div:target {
     background-color: transparent;      /* higlight removed */
     transform: scale(1);                /* size back to normal */
   }
+}
+
+
+/*understand later*/
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.photo-card {
+  display: flex;
+  flex-direction: column;   /* stack image and caption */
+  align-items: center;      /* center caption under image */
+  flex: 1 1 30%;            /* base width: ~3 per row */
+  max-width: 300px;
+}
+
+.photo-card figcaption {
+  margin-top: 5px;
+  font-size: 0.9em;
+  text-align: center;
+  color: #bda0a0;
+}
+
+/* Breakpoints for responsiveness */
+@media (max-width: 1199px) {
+  .photo-card { flex: 1 1 45%; }  /* 2 per row */
+}
+
+@media (max-width: 799px) {
+  .photo-card { flex: 1 1 90%; }  /* 1 per row */
 }
