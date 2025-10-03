@@ -95,12 +95,12 @@ div:target {
 .analoges{
     border-radius: 12px;
     padding: 10px;
-    max-width: 175px;
+    width: 175px;
 }
 .polaroids{
     border-radius: 5px;
     padding: 10px;
-    max-width: 150px;
+    width: 150px;
 }
 
 
