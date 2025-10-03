@@ -181,7 +181,7 @@ div:target {
 
 @media (max-width: 425px) {
   .photo-card { flex: 1 1 90%; }  /* 1 per row */
-  .photo-stamp { flex: 0 1 100px; } /* even smaller on tiny screens */
+  .photo-stamp { flex: 0 1 110px; } /* even smaller on tiny screens */
 
   .navigate ul {
         flex-direction: row;       /* keep items in a row but allow wrapping */
@@ -190,8 +190,9 @@ div:target {
         justify-content: center;   /* center the whole block */
     }
     .navigate ul li {
-        flex: 1 1 33%;             /* each item takes ~45% of row (2 per row) */
+        flex: 1 1 45%;             /* each item takes ~45% of row (2 per row) */
         text-align: center;        /* center the text inside each item */
+        gap: 10px;
     }
 
     .griddy > div:first-child { /* the left info section with the image */
@@ -221,6 +222,7 @@ div:target {
     .navigate ul li {
         flex: 1 1 33%;             /* each item takes ~45% of row (2 per row) */
         text-align: center;        /* center the text inside each item */
+        gap: 10px;
     }
 
     .griddy > div:first-child { /* the left info section with the image */
