@@ -151,6 +151,6 @@ div:target {
   .photo-card { flex: 1 1 75%; }  /* 1 per row */
 }
 
-@media (max-width: 375) {
+@media (max-width: 375px) {
   .photo-card { flex: 1 1 90%; }  /* 1 per row */
 }
