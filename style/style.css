@@ -156,27 +156,27 @@ div:target {
   .photo-stamp { flex: 0 1 120px; } /* shrink a bit for smaller screens */
 
     .navigate ul {
-        flex-direction: row;       /* keep items in a row but allow wrapping */
-        flex-wrap: wrap;           /* allow items to wrap to the next line */
-        gap: 10px;                 /* spacing between items */
-        justify-content: center;   /* center the whole block */
-    }
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .navigate ul li {
+    flex: 1 1 1 auto;   /* allows items to shrink or grow */
+    text-align: center;
+  }
 
-    .navigate ul li {
-        flex: 1 1 33%;             /* each item takes ~45% of row (2 per row) */
-        text-align: center;        /* center the text inside each item */
-    }
+  .griddy {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
 
-    .griddy {
-        display: flex;
-        flex-direction: column; /* stack items vertically */
-        gap: 20px;              /* spacing between sections */
-    }
-
-    /* Optional: make the inner flexy divs take full width */
-    .griddy > div {
-        width: 100%;
-    }
+  /* Images scale down slightly */
+  img {
+    max-width: 90%;
+    height: auto;
+  }
 }
 
 /* Mobile */
@@ -184,27 +184,26 @@ div:target {
   .photo-card { flex: 1 1 90%; }  /* 1 per row */
   .photo-stamp { flex: 0 1 100px; } /* even smaller on tiny screens */
 
-
   .navigate ul {
         flex-direction: row;       /* keep items in a row but allow wrapping */
         flex-wrap: wrap;           /* allow items to wrap to the next line */
         gap: 10px;                 /* spacing between items */
         justify-content: center;   /* center the whole block */
     }
-
     .navigate ul li {
         flex: 1 1 33%;             /* each item takes ~45% of row (2 per row) */
         text-align: center;        /* center the text inside each item */
     }
 
-    .griddy {
+    .griddy > div:first-child { /* the left info section with the image */
         display: flex;
-        flex-direction: column; /* stack items vertically */
-        gap: 20px;              /* spacing between sections */
+        flex-direction: column;
+        align-items: center;  /* centers children horizontally */
     }
-
-    /* Optional: make the inner flexy divs take full width */
-    .griddy > div {
-        width: 100%;
+    .griddy > div:first-child #info {
+        width: 100%; /* optional, keeps info full width below image */
+    }
+    .photoMe {
+        margin: 0 auto;  /* centers the image inside its container */
     }
 }
