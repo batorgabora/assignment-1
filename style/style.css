@@ -179,6 +179,34 @@ div:target {
   }
 }
 
+@media (max-width: 425px) {
+  .photo-card { flex: 1 1 90%; }  /* 1 per row */
+  .photo-stamp { flex: 0 1 100px; } /* even smaller on tiny screens */
+
+  .navigate ul {
+        flex-direction: row;       /* keep items in a row but allow wrapping */
+        flex-wrap: wrap;           /* allow items to wrap to the next line */
+        gap: 10px;                 /* spacing between items */
+        justify-content: center;   /* center the whole block */
+    }
+    .navigate ul li {
+        flex: 1 1 33%;             /* each item takes ~45% of row (2 per row) */
+        text-align: center;        /* center the text inside each item */
+    }
+
+    .griddy > div:first-child { /* the left info section with the image */
+        display: flex;
+        flex-direction: column;
+        align-items: center;  /* centers children horizontally */
+    }
+    .griddy > div:first-child #info {
+        width: 100%; /* optional, keeps info full width below image */
+    }
+    .photoMe {
+        margin: 0 auto;  /* centers the image inside its container */
+    }
+}
+
 /* Mobile */
 @media (max-width: 375px) {
   .photo-card { flex: 1 1 90%; }  /* 1 per row */
