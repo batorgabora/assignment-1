@@ -11,7 +11,7 @@ h1{
 .flexy{
     display: flex;
     flex-direction: column;
-    gap: 5pxpx;
+    gap: 5px;
 }
 .flexy > div {
   /*border: 1px solid rgb(9, 94, 164); /* or any color */
