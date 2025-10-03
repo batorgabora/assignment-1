@@ -8,19 +8,6 @@ h1{
     text-align: center;
 }
 
-.photoMe {
-    width: 100%;
-    max-width: 250px;   /* prevents it from stretching beyond the max column size */
-    border-radius: 10px;
-    height: auto;       /* keeps proportions */
-    object-fit: cover;  /* optional: makes sure it fills neatly */
-}
-.analoges{
-    border-radius: 40px;
-    padding: 10px;
-    max-width: 250px;
-}
-
 .flexy{
     display: flex;
     flex-direction: column;
@@ -98,6 +85,24 @@ div:target {
   }
 }
 
+.photoMe {
+    width: 100%;
+    max-width: 250px;   /* prevents it from stretching beyond the max column size */
+    border-radius: 10px;
+    height: auto;       /* keeps proportions */
+    object-fit: cover;  /* optional: makes sure it fills neatly */
+}
+.analoges{
+    border-radius: 12px;
+    padding: 10px;
+    max-width: 175px;
+}
+.polaroids{
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 150px;
+}
+
 
 /*understand later*/
 .photo-gallery {
@@ -111,7 +116,7 @@ div:target {
   display: flex;
   flex-direction: column;   /* stack image and caption */
   align-items: center;      /* center caption under image */
-  flex: 1 1 30%;            /* base width: ~3 per row */
+  flex: 1 1 1 30%;            /* base width: ~3 per row */
   max-width: 300px;
 }
 
@@ -122,11 +127,30 @@ div:target {
   color: #bda0a0;
 }
 
+.photo-stamp {
+  display: flex;
+  flex-direction: column;   /* stack image and caption */
+  align-items: center;      /* center caption under image */
+  flex: 1 1 1 1 30%;            /* base width: ~5 per row */
+  max-width: 300px;
+}
+
+.photo-stamp figcaption {
+  margin-top: 5px;
+  font-size: 0.9em;
+  text-align: center;
+  color: #bda0a0;
+}
+
 /* Breakpoints for responsiveness */
-@media (max-width: 1199px) {
+@media (max-width: 1024px) {
   .photo-card { flex: 1 1 45%; }  /* 2 per row */
 }
 
-@media (max-width: 799px) {
+@media (max-width: 768px) {
+  .photo-card { flex: 1 1 75%; }  /* 1 per row */
+}
+
+@media (max-width: 375) {
   .photo-card { flex: 1 1 90%; }  /* 1 per row */
 }
