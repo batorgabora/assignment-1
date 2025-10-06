@@ -1,6 +1,6 @@
 body{
-    background-color: #181A1B;
-    color: #B4AFA6;
+    background-color: #131516;
+    color: #B3AEA5;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -56,8 +56,9 @@ hr {
 
 .navigate a {
     text-decoration: none;       /* remove underline */
-    color: #b18686;
+    /*color: #b18686; */
     /*transition: all 0.3s ease;  /* smooth hover effect */
+    color: #968F82
 }
 
 a{
