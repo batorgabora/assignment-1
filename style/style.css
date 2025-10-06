@@ -149,6 +149,35 @@ div:target {
   text-align: center;
   gap: 10px;
 }
+
+/* chatGPT help */
+/* Tooltip that appears above the project link */
+.photo-portfolio a::after {
+  content: attr(title);         /* shows text from the title attribute */
+  position: absolute;           /* moves with link */
+  bottom: 130%;                 /* appears just above the link */
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  opacity: 0;
+  background: #1c1a1a;
+  color: #B3AEA5;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8em;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.1s ease-out, transform 0.1s ease-out;
+  box-shadow: 0 0 8px #00000070;
+}
+.photo-portfolio a:hover {
+  color: #e2c5c5;
+}
+.photo-portfolio a:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+
 .projects {                                         /* New project-grid container for selfDrive project */
   display: flex;
   flex-direction: column;
@@ -181,12 +210,6 @@ div:target {
   flex: 1;                                          /* text column takes remaining space */
   min-width: 300px;                                 /* prevents squishing */
   max-width: 800px;                                 /* prevents overflow on wide screens */
-}
-.photo-portfolio a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;                                         /* spacing now applies inside the link */
 }
 .pfp {
   width: 40vw;                                      /* scales with screen width */
