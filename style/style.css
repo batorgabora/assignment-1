@@ -47,7 +47,7 @@ hr{
 .navigate ul {                                          /* navigation list styling */
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
   margin: 0;
   padding: 0;
   justify-content: center;
