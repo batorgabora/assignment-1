@@ -8,8 +8,7 @@ body {
 
 h1{
   text-align: center;                                   /* center main heading */
-  border: none;                                         /* remove default 3D border */
-  border-top: 1px solid #B4AFA6;                      /* custom color and thickness */
+  border: none;                                         /* remove default 3D border */                    /* custom color and thickness */
 }
 
 /* CURRICULUM VITAE */
