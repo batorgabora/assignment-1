@@ -134,13 +134,38 @@ div:target {
   flex: 1 1 1 1 30%;            /* base width: ~5 per row */
   max-width: 300px;
 }
-
 .photo-stamp figcaption {
   margin-top: 5px;
   font-size: 0.9em;
   text-align: center;
   color: #bda0a0;
 }
+
+
+.photo-pfp {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 5px;   /* 👈 this creates space between the img and figcaption */
+}
+.photo-pfp a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* spacing now applies inside the link */
+}
+.pfp {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;           /* ensure horizontal centering */
+}
+
+
 
 /* Breakpoints for responsiveness */
 
