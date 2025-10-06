@@ -141,8 +141,18 @@ div:target {
   color: #bda0a0;
 }
 
+.projects {
+  display: flex;
+  flex-direction: column;   /* stack image and caption */
+  align-items: center;      /* center caption under image */
+  flex: 1 1 1 30%;            /* base width: ~5 per row */
+  max-width: 300px;
+}
+.project-pic {
+  width: 40;
+}
 
-.photo-pfp {
+.photo-portfolio {
   display: flex;
   flex-direction: column;  
   align-items: center;
@@ -150,7 +160,7 @@ div:target {
   text-align: center;
   gap: 5px;   /* 👈 this creates space between the img and figcaption */
 }
-.photo-pfp a {
+.photo-portfolio a {
   display: flex;
   flex-direction: column;
   align-items: center;
