@@ -1,104 +1,95 @@
-body{
-    background-color: #0d0f0f;
-    color: #B3AEA5;
-    font-family: 'Courier New', Courier, monospace;
-    overflow-x: hidden; /* stops sideways scrolling */
-}
+body {
+  background-color: #0d0f0f;                          /* main background and text styling */
+  color: #B3AEA5;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: hidden;                                   /* stops sideways scrolling */
+  padding: 10px;
 
 h1{
-    text-align: center;
+  text-align: center;                                   /* center main heading */
+  border: none;                                         /* remove default 3D border */
+  border-top: 1px solid #B4AFA6;                      /* custom color and thickness */
 }
 
-hr {
-  width: 25%;
-  border: none;              /* remove default 3D border */
-  border-top: 1px solid #B4AFA6;  /* your custom color and thickness */
+/* CURRICULUM VITAE */
+.flexy {
+  display: flex;                                        /* flex container stacked vertically with gap */
+  flex-direction: column;
+  gap: 5px;
 }
-
-.flexy{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.flexy > div {                                          /* inner flex items spacing */              
+  padding: 5px;                                         /* space inside so text doesn’t touch border */
 }
-.flexy > div {
-  /*border: 1px solid rgb(9, 94, 164); /* or any color */
-  padding: 5px; /* space inside so text doesn’t touch border */
+.griddy {
+  display: grid;                                        /* grid container with two columns */
+  grid-template-columns: minmax(250px, 300px) 1fr;
+  gap: 5px;
 }
-
-.griddy{
-    display: grid;
-    grid-template-columns: minmax(250px, 300px) 1fr;
-    gap: 5px;
-}
-
-.griddy > div{
-    /*border: 1px solid rgb(73, 186, 88); /* or any color */
-    padding: 10px; /* space inside so text doesn’t touch border */
+.griddy > div {                                         /* inner grid items padding */
+  padding: 10px;                                        /* space inside so text doesn’t touch border */
 }
 
 
-.navbar{
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    font-style: italic;
-    font-weight: bold;
+/* NAVIGATION BAR */
+.navbar {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-style: italic;
+  font-weight: bold;
+}
+.navigate ul {                                          /* navigation list styling */
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+.navigate a {                                           /* navigation link styling */
+  text-decoration: none;                                /* remove underline */
+  color: #946c6c;
 }
 
-.navigate ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;                   /* space between items */
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-}
-
-.navigate a {
-    text-decoration: none;       /* remove underline */
-    /*color: #b18686; */
-    /*transition: all 0.3s ease;  /* smooth hover effect */
-    color: #946c6c;
-}
-
-a{
-    color: #946c6c;
-    text-decoration: none;
+a{                                                      /* general link styling */
+  color: #946c6c;
+  text-decoration: none;
 }
 a:hover{
-    color: #823e3e;
+  color: #823e3e;
 }
 
-/* Highlight the section that is linked */
+/* HIGHLIGHT ANIMATION FOR SECTIONS */
 div:target {
-    animation: highlightFade 1s ease forwards;  /*forwards keeps the last keyframe's styles after */
-    /* ease makes it start fast and slow down */
-    border-radius: 8px;
+    animation: highlightFade 1s ease forwards;           /*forwards keeps the last keyframe's styles after */                                                       
+    border-radius: 8px;                                  /* ease makes it start fast and slow down */  
     padding: 10px;
 }
-
 @keyframes highlightFade {
-  0% {      /* start of the animation */
+  0% {                                                   /* start of the animation */
     background-color: #4d4949;
-    transform: scale(1.02);      /* enlarges section by 2% */
+    transform: scale(1.02);                              /* enlarges section by 2% */
   }
-  80% {     /*near the end of animation */
+  80% {                                                  /*near the end of animation */
     background-color: #353232;
     transform: scale(1.02);
   }
   100% {
-    background-color: transparent;      /* higlight removed */
-    transform: scale(1);                /* size back to normal */
-  }
-}
+    background-color: transparent;                       /* higlight removed */
+    transform: scale(1);                                 /* size back to normal */
+  }                                                      /* help of chatGPT */
+}                                                         
+
 .photoMe {
     width: 100%;
-    max-width: 250px;   /* prevents it from stretching beyond the max column size */
+    max-width: 250px;                                   /* prevents it from stretching beyond the max column size */
     border-radius: 10px;
-    height: auto;       /* keeps proportions */
-    object-fit: cover;  /* optional: makes sure it fills neatly */
+    height: auto;                                       /* keeps proportions */
+    object-fit: cover;                                  /* optional: makes sure it fills neatly */
 }
+
+
 
 /* ABOUT ME */
 .analoges{
@@ -117,11 +108,11 @@ div:target {
   gap: 20px;
   justify-content: center;
 }
-.photo-card {
+.photo-card {                                           /* layout for analoges */
   display: flex;
-  flex-direction: column;   /* stack image and caption */
-  align-items: center;      /* center caption under image */
-  flex: 1 1 1 30%;            /* base width: ~3 per row */
+  flex-direction: column;                               /* stack image and caption */
+  align-items: center;                                  /* center caption under image */
+  flex: 1 1 1 1 30%;                                    /* base width: ~3 per row */
   max-width: 300px;
 }
 .photo-card figcaption {
@@ -130,11 +121,11 @@ div:target {
   text-align: center;
   color: #bda0a0;
 }
-.photo-stamp {
+.photo-stamp {                                        /* layout for polaroids */
   display: flex;
-  flex-direction: column;   /* stack image and caption */
-  align-items: center;      /* center caption under image */
-  flex: 1 1 1 1 30%;            /* base width: ~5 per row */
+  flex-direction: column;                             /* stack image and caption */
+  align-items: center;                                /* center caption under image */
+  flex: 1 1 1 1 30%;                                  /* base width: ~5 per row */
   max-width: 300px;
 }
 .photo-stamp figcaption {
@@ -149,51 +140,48 @@ div:target {
 .photo-portfolio {
   display: flex;
   flex-direction: column;
-  align-items: center;       /* centers content inside each figure */
+  align-items: center;
   text-align: center;
   gap: 10px;
 }
-/* New project-grid container for selfDrive project */
-.projects {
+.projects {                                         /* New project-grid container for selfDrive project */
   display: flex;
   flex-direction: column;
   gap: 80px;
   width: 100%;
-  max-width: 1600px; /* allow wide layout on desktop */
+  max-width: 1600px;                                /* allow wide layout on desktop */
   margin: 0 auto;
-  padding: 0 5vw;    /* soft padding relative to screen width */
+  padding: 0 5vw;                                   /* soft padding relative to screen width */
   box-sizing: border-box;
 }
 .project-grid {
   display: grid;
-  grid-template-columns: minmax(300px, 35%) 1fr; /* image: up to 35% of width, text takes the rest */
+  grid-template-columns: minmax(300px, 35%) 1fr;    /* image: up to 35% of width, text takes the rest */
   gap: 40px;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
 }
 .project-pic {
-  width: 260px;               /* slightly larger image */
+  width: 260px;
   height: auto;
   object-fit: contain;
   display: block;
-  border-radius: 6px;         /* optional: softens edges */
+  border-radius: 6px;
 }
-
 .project-grid figure {
-  flex: 0 0 300px;              /* image column stays around 300px wide */
+  flex: 0 0 300px;                                  /* image column stays around 300px wide */
 }
-
 .project-grid div {
-  flex: 1;                      /* text column takes remaining space */
-  min-width: 300px;             /* prevents squishing */
-  max-width: 800px;             /* prevents overflow on wide screens */
+  flex: 1;                                          /* text column takes remaining space */
+  min-width: 300px;                                 /* prevents squishing */
+  max-width: 800px;                                 /* prevents overflow on wide screens */
 }
 .photo-portfolio a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px; /* spacing now applies inside the link */
+  gap: 10px;                                         /* spacing now applies inside the link */
 }
 .pfp {
   width: 150px;
@@ -201,14 +189,12 @@ div:target {
   object-fit: cover;
   border-radius: 50%;
   display: block;
-  margin: 0 auto;           /* ensure horizontal centering */
+  margin: 0 auto;                                    /* ensure horizontal centering */
 }
 
 
 
-/* Breakpoints for responsiveness */
-
-/* Tablets */
+/* BREAKPOINTS AND RESPONSIVENESS*/
 @media (max-width: 1024px) {
   .photo-card { flex: 1 1 45%; }  /* 2 per row */
   .photo-stamp { flex: 0 1 150px; } /* stays 150px but wraps if needed */
@@ -233,7 +219,6 @@ div:target {
   }
 }
 
-/* Small tablets / large phones */
 @media (max-width: 768px) {
   .photo-card { flex: 1 1 75%; }  /* 1 per row */
   .photo-stamp { flex: 0 1 120px; } /* shrink a bit for smaller screens */
@@ -266,7 +251,6 @@ div:target {
   }
 }
 
-/* Phones slightly larger than 375px (iPhone 13/14) */
 @media (max-width: 400px) {
   .photo-card { flex: 1 1 90%; }
   .photo-stamp { flex: 0 1 110px; }
@@ -305,7 +289,6 @@ div:target {
   }
 }
 
-/* Mobile */
 @media (max-width: 375px) {
   .photo-card { flex: 1 1 90%; }  /* 1 per row */
   .photo-stamp { flex: 0 1 100px; } /* even smaller on tiny screens */
@@ -333,4 +316,5 @@ div:target {
     .photoMe {
         margin: 0 auto;  /* centers the image inside its container */
     }
+  }  
 }
