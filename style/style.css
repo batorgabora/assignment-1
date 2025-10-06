@@ -1,6 +1,6 @@
 body{
-    background-color: #211f1f;
-    color: #bda0a0;
+    background-color: #181A1B;
+    color: #B4AFA6;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -11,7 +11,7 @@ h1{
 hr {
   width: 25%;
   border: none;              /* remove default 3D border */
-  border-top: 2px solid #b18686;  /* your custom color and thickness */
+  border-top: 2px solid #B4AFA6;  /* your custom color and thickness */
 }
 
 .flexy{
