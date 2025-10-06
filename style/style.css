@@ -189,12 +189,13 @@ div:target {
   gap: 10px;                                         /* spacing now applies inside the link */
 }
 .pfp {
-  width: 150px;
-  height: 150px;
+  width: 40vw;                                      /* scales with screen width */
+  max-width: 150px;                                 /* doesn’t exceed original size */
+  aspect-ratio: 1 / 1;                              /* keeps perfect circle */
   object-fit: cover;
   border-radius: 50%;
   display: block;
-  margin: 0 auto;                                    /* ensure horizontal centering */
+  margin: 0 auto;
 }
 
 
