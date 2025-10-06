@@ -176,6 +176,13 @@ div:target {
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
+.photo-portfolio figcaption {
+  margin-top: 10px;
+  text-align: center;
+  color: #B3AEA5;
+  font-size: 1em;
+  display: block;
+}
 
 
 .projects {                                         /* New project-grid container for selfDrive project */
