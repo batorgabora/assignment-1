@@ -4,6 +4,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   overflow-x: hidden;                                   /* stops sideways scrolling */
   padding: 10px;
+}
 
 h1{
   text-align: center;                                   /* center main heading */
@@ -194,15 +195,19 @@ div:target {
 
 
 
-/* BREAKPOINTS AND RESPONSIVENESS*/
+/* BREAKPOINTS */
 @media (max-width: 1024px) {
-  .photo-card { flex: 1 1 45%; }  /* 2 per row */
-  .photo-stamp { flex: 0 1 150px; } /* stays 150px but wraps if needed */
+  .photo-card { 
+    flex: 1 1 45%;                                   /* 2 per row */
+  }
+  .photo-stamp { 
+    flex: 0 1 150px;                                 /* stays 150px but wraps if needed */
+  }
 }
 
 @media (max-width: 900px) {
   .project-grid {
-    grid-template-columns: 1fr; /* stack vertically */
+    grid-template-columns: 1fr;                       /* stack vertically */
     text-align: center;
     gap: 20px;
   }
@@ -212,7 +217,7 @@ div:target {
   }
 
   .project-grid p {
-    text-align: left; /* or justify if you prefer */
+    text-align: left;
   }
   .project-pic {
     height: 180px;
@@ -220,17 +225,21 @@ div:target {
 }
 
 @media (max-width: 768px) {
-  .photo-card { flex: 1 1 75%; }  /* 1 per row */
-  .photo-stamp { flex: 0 1 120px; } /* shrink a bit for smaller screens */
+  .photo-card { 
+    flex: 1 1 75%;                                  /* 1 per row */
+  }
+  .photo-stamp { 
+    flex: 0 1 120px;                                /* shrink a bit for smaller screens */
+  }
 
-    .navigate ul {
+  .navigate ul {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.5rem;
     justify-content: center;
   }
   .navigate ul li {
-    flex: 1 1 1 auto;   /* allows items to shrink or grow */
+    flex: 1 1 1 auto;                               /* allows items to shrink or grow */
     text-align: center;
   }
 
@@ -241,35 +250,39 @@ div:target {
   }
 
   .project-grid {
-    grid-template-columns: 1fr;;
+    grid-template-columns: 1fr;
   }
 
-  /* Images scale down slightly */
-  img {
+
+  img {                                             /* image scaling */
     max-width: 90%;
     height: auto;
   }
 }
 
 @media (max-width: 400px) {
-  .photo-card { flex: 1 1 90%; }
-  .photo-stamp { flex: 0 1 110px; }
+  .photo-card { 
+    flex: 1 1 90%; 
+  }
+  .photo-stamp { 
+    flex: 0 1 110px; 
+  }
 
   .navigate ul {
-    flex-direction: column;   /* stack vertically */
+    flex-direction: column;                       /* stack vertically */
     gap: 10px;
     justify-content: center;
     align-items: center;
   }
 
   .navigate ul li {
-    flex: 1 1 100%;           /* full width nav items */
+    flex: 1 1 100%;                               /* full width nav items */
     text-align: center;
   }
 
   .griddy {
     display: flex;
-    flex-direction: column;   /* stack all sections vertically */
+    flex-direction: column;                        /* stack all sections vertically */
     gap: 20px;
   }
 
@@ -285,36 +298,39 @@ div:target {
 
   .photoMe {
     margin: 0 auto;
-    max-width: 200px; /* optional scaling for bigger phones */
+    max-width: 200px;                               /* optional scaling for bigger phones */
   }
 }
 
 @media (max-width: 375px) {
-  .photo-card { flex: 1 1 90%; }  /* 1 per row */
-  .photo-stamp { flex: 0 1 100px; } /* even smaller on tiny screens */
+  .photo-card { 
+    flex: 1 1 90%;                                  /* 1 per row */
+  }
+  .photo-stamp { 
+    flex: 0 1 100px;                                /* even smaller on tiny screens */
+  }
 
   .navigate ul {
-        flex-direction: row;       /* keep items in a row but allow wrapping */
-        flex-wrap: wrap;           /* allow items to wrap to the next line */
-        gap: 10px;                 /* spacing between items */
-        justify-content: center;   /* center the whole block */
-    }
-    .navigate ul li {
-        flex: 1 1 33%;             /* each item takes ~45% of row (2 per row) */
-        text-align: center;        /* center the text inside each item */
-        gap: 10px;
-    }
+    flex-direction: row;                            /* keep items in a row but allow wrapping */
+    flex-wrap: wrap;                                /* allow items to wrap to the next line */
+    gap: 10px;                                      /* spacing between items */
+    justify-content: center;                        /* center the whole block */
+  }
+  .navigate ul li {
+    flex: 1 1 33%;                                  /* each item takes ~45% of row (2 per row) */
+    text-align: center;                             /* center the text inside each item */
+    gap: 10px;
+  }
 
-    .griddy > div:first-child { /* the left info section with the image */
-        display: flex;
-        flex-direction: column;
-        align-items: center;  /* centers children horizontally */
-    }
-    .griddy > div:first-child #info {
-        width: 100%; /* optional, keeps info full width below image */
-    }
-    .photoMe {
-        margin: 0 auto;  /* centers the image inside its container */
-    }
-  }  
+  .griddy > div:first-child {                       /* the left info section with the image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;                            /* centers children horizontally */
+  }
+  .griddy > div:first-child #info {
+    width: 100%;                                    /* optional, keeps info full width below image */
+  }
+  .photoMe {
+    margin: 0 auto;                                  /* centers the image inside its container */
+  }
 }
