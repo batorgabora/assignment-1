@@ -47,7 +47,7 @@ hr{
 .navigate ul {                                          /* navigation list styling */
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 25px;
   margin: 0;
   padding: 0;
   justify-content: center;
@@ -244,7 +244,7 @@ div:target {
     justify-content: center;
   }
   .navigate ul li {
-    flex: 1 1 1 auto;                               /* allows items to shrink or grow */
+    flex: 1 1 auto;                               /* allows items to shrink or grow */
     text-align: center;
   }
 
