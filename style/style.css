@@ -8,6 +8,12 @@ h1{
     text-align: center;
 }
 
+hr {
+  width: 25%;
+  border: none;              /* remove default 3D border */
+  border-top: 2px solid #b18686;  /* your custom color and thickness */
+}
+
 .flexy{
     display: flex;
     flex-direction: column;
@@ -143,23 +149,26 @@ div:target {
 
 .projects {
   display: flex;
-  flex-direction: column;   /* stack image and caption */
-  align-items: center;      /* center caption under image */
-  flex: 1 1 1 30%;            /* base width: ~5 per row */
-  max-width: 300px;
+  flex-direction: row;
+  justify-content: center;   /* center the projects horizontally */
+  align-items: flex-start;   /* align them at the top (same height baseline) */
+  gap: 40px;                 /* spacing between project blocks */
+  flex-wrap: wrap;           /* allow wrapping on smaller screens */
 }
-.project-pic {
-  width: 40;
-}
-
 .photo-portfolio {
   display: flex;
-  flex-direction: column;  
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;       /* centers content inside each figure */
   text-align: center;
-  gap: 5px;   /* 👈 this creates space between the img and figcaption */
+  gap: 10px;
 }
+.project-pic {
+  width: auto;              /* bigger looks better horizontally */
+  height: 175px;
+  border-radius: 10px;
+}
+
+
 .photo-portfolio a {
   display: flex;
   flex-direction: column;
