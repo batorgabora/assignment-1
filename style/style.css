@@ -11,6 +11,11 @@ h1{
   border: none;                                         /* remove default 3D border */                    /* custom color and thickness */
 }
 
+hr{
+  border: 1px solid #B3AEA5;                            /* custom color and thickness */
+  width: 20%;
+}
+
 /* CURRICULUM VITAE */
 .flexy {
   display: flex;                                        /* flex container stacked vertically with gap */
