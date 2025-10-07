@@ -1,9 +1,10 @@
-body {
+html, body {
   background-color: #0d0f0f;                          /* main background and text styling */
   color: #B3AEA5;
   font-family: 'Courier New', Courier, monospace;
   overflow-x: hidden;                                   /* stops sideways scrolling */
-  padding: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 h1{
@@ -138,6 +139,9 @@ div:target {
   font-size: 0.9em;
   text-align: center;
   color: #bda0a0;
+}
+#about{
+  padding: 10px;
 }
 
 
