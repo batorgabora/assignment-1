@@ -3,7 +3,7 @@ html, body {
   color: #B3AEA5;
   font-family: 'Courier New', Courier, monospace;
   overflow-x: hidden;                                   /* stops sideways scrolling */
-  margin: 0;
+  margin-left: 10px;
   padding: 0;
 }
 
