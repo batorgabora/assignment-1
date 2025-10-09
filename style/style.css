@@ -1,40 +1,46 @@
+/* GLOBAL STYLES */
+* {
+  box-sizing: border-box;                             /* consistent element sizing */
+}
+
 html, body {
   background-color: #0d0f0f;                          /* main background and text styling */
   color: #B3AEA5;
   font-family: 'Courier New', Courier, monospace;
-  overflow-x: hidden;                                   /* stops sideways scrolling */
-  margin-left: 10px;
-  padding: 0;
+  overflow-x: hidden;                                 /* prevent horizontal scrolling */
+  padding-left: 10px;                                 /* spacing from left edge */
+  margin: 0;
 }
 
-h1{
-  text-align: center;                                   /* center main heading */
-  border: none;                                         /* remove default 3D border */                    /* custom color and thickness */
+/* HEADINGS & DIVIDERS */
+h1 {
+  text-align: center;                                 /* center main heading */
+  border: none;                                       /* remove default border */
 }
 
-hr{
-  border: 1px solid #B3AEA5;                            /* custom color and thickness */
+hr {
+  border: 1px solid #B3AEA5;                          /* custom color and thickness */
   width: 20%;
 }
 
 /* CURRICULUM VITAE */
 .flexy {
-  display: flex;                                        /* flex container stacked vertically with gap */
+  display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.flexy > div {                                          /* inner flex items spacing */              
-  padding: 5px;                                         /* space inside so text doesn’t touch border */
+.flexy > div {                                        
+  padding: 5px;                                       
 }
+
 .griddy {
-  display: grid;                                        /* grid container with two columns */
+  display: grid;
   grid-template-columns: minmax(250px, 300px) 1fr;
   gap: 5px;
 }
-.griddy > div {                                         /* inner grid items padding */
-  padding: 10px;                                        /* space inside so text doesn’t touch border */
+.griddy > div {                                         
+  padding: 10px;                                       
 }
-
 
 /* NAVIGATION BAR */
 .navbar {
@@ -45,7 +51,8 @@ hr{
   font-style: italic;
   font-weight: bold;
 }
-.navigate ul {                                          /* navigation list styling */
+
+.navigate ul {                                          
   list-style: none;
   display: flex;
   gap: 25px;
@@ -53,97 +60,78 @@ hr{
   padding: 0;
   justify-content: center;
 }
-.navigate a {                                           /* navigation link styling */
-  text-decoration: none;                                /* remove underline */
-  color: #946c6c;
-}
 
-a{                                                      /* general link styling */
+.navigate a, 
+a {                                                     
   color: #946c6c;
   text-decoration: none;
 }
-a:hover{
+
+a:hover {
   color: #823e3e;
 }
 
-/* HIGHLIGHT ANIMATION FOR SECTIONS */
+/* SECTION HIGHLIGHT ANIMATION */
 div:target {
-    animation: highlightFade 1s ease forwards;           /*forwards keeps the last keyframe's styles after */                                                       
-    border-radius: 8px;                                  /* ease makes it start fast and slow down */  
-    padding: 10px;
+  animation: highlightFade 1s ease;                                                      
+  border-radius: 8px;                                 
+  padding: 10px;
 }
+
 @keyframes highlightFade {
-  0% {                                                   /* start of the animation */
-    background-color: #4d4949;
-    transform: scale(1.02);                              /* enlarges section by 2% */
-  }
-  80% {                                                  /*near the end of animation */
-    background-color: #353232;
-    transform: scale(1.02);
-  }
-  100% {
-    background-color: transparent;                       /* higlight removed */
-    transform: scale(1);                                 /* size back to normal */
-  }                                                      /* help of chatGPT */
-}                                                         
-
-.photoMe {
-    width: 100%;
-    max-width: 250px;                                   /* prevents it from stretching beyond the max column size */
-    border-radius: 10px;
-    height: auto;                                       /* keeps proportions */
-    object-fit: cover;                                  /* optional: makes sure it fills neatly */
+  0% { background-color: #4d4949; transform: scale(1.02); }
+  80% { background-color: #353232; transform: scale(1.02); }
+  100% { background-color: transparent; transform: scale(1); }
 }
-
-
 
 /* ABOUT ME */
-.analoges{
-    border-radius: 12px;
-    padding: 10px;
-    width: 175px;
+.photoMe {
+  width: 100%;
+  max-width: 250px;                                  
+  border-radius: 10px;
+  height: auto;
+  object-fit: cover;
 }
-.polaroids{
-    border-radius: 5px;
-    padding: 10px;
-    width: 150px;
+
+.analoges {
+  border-radius: 12px;
+  padding: 10px;
+  width: 175px;
 }
+
+.polaroids {
+  border-radius: 5px;
+  padding: 10px;
+  width: 150px;
+}
+
 .photo-gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
-.photo-card {                                           /* layout for analoges */
+
+.photo-card, 
+.photo-stamp {
   display: flex;
-  flex-direction: column;                               /* stack image and caption */
-  align-items: center;                                  /* center caption under image */
-  flex: 1 1 1 1 30%;                                    /* base width: ~3 per row */
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 30%;                                      /* fixed invalid flex value */
   max-width: 300px;
 }
-.photo-card figcaption {
-  margin-top: 5px;
-  font-size: 0.9em;
-  text-align: center;
-  color: #bda0a0;
-}
-.photo-stamp {                                        /* layout for polaroids */
-  display: flex;
-  flex-direction: column;                             /* stack image and caption */
-  align-items: center;                                /* center caption under image */
-  flex: 1 1 1 1 30%;                                  /* base width: ~5 per row */
-  max-width: 300px;
-}
+
+.photo-card figcaption, 
 .photo-stamp figcaption {
   margin-top: 5px;
   font-size: 0.9em;
   text-align: center;
   color: #bda0a0;
 }
-#about{
+
+#about {
   padding: 10px;
 }
-
 
 /* PORTFOLIO */
 .photo-portfolio {
@@ -154,12 +142,11 @@ div:target {
   gap: 10px;
 }
 
-/* chatGPT help */
-/* Tooltip that appears above the project link */
+/* Tooltip above project links */
 .photo-portfolio a::after {
-  content: attr(title);         /* shows text from the title attribute */
-  position: absolute;           /* moves with link */
-  bottom: 130%;                 /* appears just above the link */
+  content: attr(title);
+  position: absolute;
+  bottom: 130%;
   left: 50%;
   transform: translateX(-50%) scale(0.95);
   opacity: 0;
@@ -173,13 +160,16 @@ div:target {
   transition: opacity 0.1s ease-out, transform 0.1s ease-out;
   box-shadow: 0 0 8px #00000070;
 }
+
 .photo-portfolio a:hover {
   color: #e2c5c5;
 }
+
 .photo-portfolio a:hover::after {
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
+
 .photo-portfolio figcaption {
   margin-top: 10px;
   text-align: center;
@@ -188,25 +178,25 @@ div:target {
   display: block;
 }
 
-
-.projects {                                         /* New project-grid container for selfDrive project */
+/* PROJECT GRID */
+.projects {
   display: flex;
   flex-direction: column;
   gap: 80px;
   width: 100%;
-  max-width: 1600px;                                /* allow wide layout on desktop */
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 5vw;                                   /* soft padding relative to screen width */
-  box-sizing: border-box;
+  padding: 0 5vw;
 }
+
 .project-grid {
   display: grid;
-  grid-template-columns: minmax(300px, 35%) 1fr;    /* image: up to 35% of width, text takes the rest */
+  grid-template-columns: minmax(300px, 35%) 1fr;
   gap: 40px;
   align-items: center;
   width: 100%;
-  box-sizing: border-box;
 }
+
 .project-pic {
   width: 260px;
   height: auto;
@@ -214,162 +204,93 @@ div:target {
   display: block;
   border-radius: 6px;
 }
+
 .project-grid figure {
-  flex: 0 0 300px;                                  /* image column stays around 300px wide */
+  flex: 0 0 300px;
 }
+
 .project-grid div {
-  flex: 1;                                          /* text column takes remaining space */
-  min-width: 300px;                                 /* prevents squishing */
-  max-width: 800px;                                 /* prevents overflow on wide screens */
+  flex: 1;
+  min-width: 300px;
+  max-width: 800px;
 }
+
 .pfp {
-  width: 40vw;                                      /* scales with screen width */
-  max-width: 150px;                                 /* doesn’t exceed original size */
-  aspect-ratio: 1 / 1;                              /* keeps perfect circle */
+  width: 40vw;
+  max-width: 150px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 50%;
   display: block;
   margin: 0 auto;
 }
 
-
-
 /* BREAKPOINTS */
 @media (max-width: 1024px) {
-  .photo-card { 
-    flex: 1 1 45%;                                   /* 2 per row */
-  }
-  .photo-stamp { 
-    flex: 0 1 150px;                                 /* stays 150px but wraps if needed */
-  }
+  .photo-card { flex: 1 1 45%; }
+  .photo-stamp { flex: 0 1 150px; }
 }
 
 @media (max-width: 900px) {
   .project-grid {
-    grid-template-columns: 1fr;                       /* stack vertically */
+    grid-template-columns: 1fr;
     text-align: center;
     gap: 20px;
   }
-
-  .project-grid figure {
-    margin: 0 auto;
-  }
-
-  .project-grid p {
-    text-align: left;
-  }
-  .project-pic {
-    height: 180px;
-  }
+  .project-grid figure { margin: 0 auto; }
+  .project-grid p { text-align: left; }
+  .project-pic { height: 180px; }
 }
 
 @media (max-width: 768px) {
-  .photo-card { 
-    flex: 1 1 75%;                                  /* 1 per row */
-  }
-  .photo-stamp { 
-    flex: 0 1 120px;                                /* shrink a bit for smaller screens */
-  }
-
+  .photo-card { flex: 1 1 75%; }
+  .photo-stamp { flex: 0 1 120px; }
   .navigate ul {
-    flex-direction: row;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 8px;
     justify-content: center;
   }
-  .navigate ul li {
-    flex: 1 1 auto;                               /* allows items to shrink or grow */
-    text-align: center;
-  }
-
   .griddy {
-    display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
   }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  img {                                             /* image scaling */
+  img {
     max-width: 90%;
     height: auto;
   }
 }
 
 @media (max-width: 400px) {
-  .photo-card { 
-    flex: 1 1 90%; 
-  }
-  .photo-stamp { 
-    flex: 0 1 110px; 
-  }
-
+  .photo-card { flex: 1 1 90%; }
+  .photo-stamp { flex: 0 1 110px; }
   .navigate ul {
-    flex-direction: column;                       /* stack vertically */
+    flex-direction: column;
     gap: 10px;
-    justify-content: center;
     align-items: center;
   }
-
-  .navigate ul li {
-    flex: 1 1 100%;                               /* full width nav items */
-    text-align: center;
-  }
-
   .griddy {
-    display: flex;
-    flex-direction: column;                        /* stack all sections vertically */
+    flex-direction: column;
     gap: 20px;
   }
-
-  .griddy > div:first-child {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .griddy > div:first-child #info {
-    width: 100%;
-  }
-
   .photoMe {
     margin: 0 auto;
-    max-width: 200px;                               /* optional scaling for bigger phones */
+    max-width: 200px;
   }
 }
 
 @media (max-width: 375px) {
-  .photo-card { 
-    flex: 1 1 90%;                                  /* 1 per row */
-  }
-  .photo-stamp { 
-    flex: 0 1 100px;                                /* even smaller on tiny screens */
-  }
-
+  .photo-card { flex: 1 1 90%; }
+  .photo-stamp { flex: 0 1 100px; }
   .navigate ul {
-    flex-direction: row;                            /* keep items in a row but allow wrapping */
-    flex-wrap: wrap;                                /* allow items to wrap to the next line */
-    gap: 10px;                                      /* spacing between items */
-    justify-content: center;                        /* center the whole block */
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
   }
   .navigate ul li {
-    flex: 1 1 33%;                                  /* each item takes ~45% of row (2 per row) */
-    text-align: center;                             /* center the text inside each item */
-    gap: 10px;
-  }
-
-  .griddy > div:first-child {                       /* the left info section with the image */
-    display: flex;
-    flex-direction: column;
-    align-items: center;                            /* centers children horizontally */
-  }
-  .griddy > div:first-child #info {
-    width: 100%;                                    /* optional, keeps info full width below image */
+    flex: 1 1 33%;
+    text-align: center;
   }
   .photoMe {
-    margin: 0 auto;                                  /* centers the image inside its container */
+    margin: 0 auto;
   }
 }
